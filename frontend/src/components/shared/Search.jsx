@@ -92,24 +92,24 @@ const Search = () => {
 
   const searchBtn = isDesktop ? (
     <button
-      className='flex ml-auto mr-4 items-center relative bg-slate-700 hover:bg-slate-600 py-3 pl-4 pr-40 rounded-md '
+      className='flex flex-1 md:max-w-md lg:max-w-xl mx-8 items-center relative bg-slate-700 hover:bg-slate-600 py-3 px-4 rounded-lg '
       onClick={activateSearch}
     >
       <FontAwesomeIcon icon={faMagnifyingGlass} className='text-lg  mr-2' />
       <span className='text-lg md:text-2xl mr-2  '></span>
-      <span className='text-sm md:text-sm'>Search Movies</span>
+      <span className='text-md md:text-md'>Search Movies</span>
     </button>
   ) : (
     <FontAwesomeIcon
       icon={faMagnifyingGlass}
-      className='ml-auto mr-5 text-xl md:text-2xl hover:text-white cursor-pointer focus:white '
+      className='ml-auto mr-5 text-lg md:text-2xl hover:text-white cursor-pointer focus:white '
       onClick={activateSearch}
     />
   );
 
   const render = active ? (
     <div className='fixed p-0 top-0 left-0 h-full w-full z-50 backdrop-blur-md  bg-slate-900/30  '>
-      <div ref={search} className='md:max-w-2xl m-10 md:mx-auto '>
+      <div ref={search} className='md:max-w-3xl m-10 md:mx-auto '>
         <div
           className='flex items-center flex-1 relative rounded '
           onClick={focusInput}
@@ -117,8 +117,8 @@ const Search = () => {
           <input
             autoFocus
             ref={searchInput}
-            placeholder='Search movie'
-            className='w-full pl-12 py-3 text-md md:text-lg text-white bg-slate-700 outline-0 rounded-t-lg'
+            placeholder='Search movies'
+            className='w-full pl-12 py-3 text-lg md:text-xl text-white bg-slate-700 outline-0 rounded-t-lg'
             onChange={handleChange}
             onFocus={handleFocus}
           />

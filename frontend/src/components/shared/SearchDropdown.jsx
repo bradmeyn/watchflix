@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
-
 import './Search.css';
 import { Link } from 'react-router-dom';
 import useOutsideClick from '../../hooks/useOutsideClick';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/pro-solid-svg-icons';
 
 const SearchDropdown = ({ movies, query, closeSearch }) => {
   const [dropdownActive, setDropDownActive] = useState(false);
@@ -40,6 +41,10 @@ const SearchDropdown = ({ movies, query, closeSearch }) => {
                 {new Date(movie.release_date).getFullYear()}
               </div>
               <span className='flex items-center'>
+                <FontAwesomeIcon
+                  icon={faStar}
+                  className='mr-2 text-yellow-400'
+                />
                 <span>{Math.round(movie.vote_average * 10) / 10}</span>
               </span>
             </div>

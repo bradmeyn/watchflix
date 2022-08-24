@@ -1,5 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faStar,
+  faBookmark,
+  faCheck,
+  faHeart,
+} from '@fortawesome/pro-solid-svg-icons';
+import { faBookmark as falStar } from '@fortawesome/pro-regular-svg-icons';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -52,9 +60,15 @@ const MovieDetail = () => {
                 {movie.genres.map((genre) => genre.name).join(', ')}
               </p>
               <div className='flex  mb-2 '>
-                <button className='text-md mr-6 rounded-full hover:bg-sky-600 border-sky-600 border-2 text-white p-3 '></button>
-                <button className='text-md mr-6 rounded-full hover:bg-emerald-600 border-emerald-600 border-2 text-white p-3 '></button>
-                <button className='text-md mr-6 rounded-full hover:bg-purple-600 border-purple-600 border-2 text-white p-3 '></button>
+                <button className='text-lg mr-6 rounded-full hover:bg-sky-600 border-sky-600 border-2 text-white w-12 h-12 '>
+                  <FontAwesomeIcon icon={faBookmark} />
+                </button>
+                <button className='text-lg mr-6 rounded-full hover:bg-emerald-600 border-emerald-600 border-2 text-white w-12 h-12 '>
+                  <FontAwesomeIcon icon={faCheck} />
+                </button>
+                <button className='text-lg mr-6 rounded-full hover:bg-purple-600 border-purple-600 border-2 text-white w-12 h-12 '>
+                  <FontAwesomeIcon icon={faHeart} />
+                </button>
               </div>
               <p className='text-xl mb-4 italic'>{movie.tagline}</p>
               <div className='mb-4'>
@@ -91,6 +105,10 @@ const MovieDetail = () => {
                     Average Rating
                   </h6>
                   <div className='flex items-center '>
+                    <FontAwesomeIcon
+                      icon={faStar}
+                      className='mr-2 text-yellow-400'
+                    />
                     <span className='text-white'>
                       {Math.round(movie.vote_average * 10) / 10}
                     </span>
@@ -102,6 +120,10 @@ const MovieDetail = () => {
                     Your Rating
                   </h6>
                   <div className='flex items-center '>
+                    <FontAwesomeIcon
+                      icon={faStar}
+                      className='mr-2 text-sky-400'
+                    />
                     <span className='text-white'>
                       {Math.round(movie.vote_average * 10) / 10}
                     </span>
