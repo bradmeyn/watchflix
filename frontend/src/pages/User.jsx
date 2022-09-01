@@ -1,5 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faStar,
+  faBookmark,
+  faCheck,
+  faHeart,
+} from '@fortawesome/pro-solid-svg-icons';
 
 const User = () => {
   const [movies, setMovies] = useState([
@@ -237,7 +244,7 @@ const User = () => {
     },
   ]);
   return (
-    <div className='py-8 md:py-20 px-6'>
+    <div className='py-8 md:py-20 px-6 container mx-auto'>
       {/* <div>List/Reviews/Seen</div> */}
       <h1 className='text-3xl md:text-5xl mb-6 font-extrabold text-white'>
         Your List
@@ -259,6 +266,10 @@ const User = () => {
                   {new Date(movie.release_date).getFullYear()}
                 </div>
                 <span className='flex items-center'>
+                  <FontAwesomeIcon
+                    icon={faStar}
+                    className='mr-2 text-yellow-400'
+                  />
                   <span>{movie.vote_average}</span>
                 </span>
               </div>

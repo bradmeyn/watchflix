@@ -27,6 +27,7 @@ const MovieDetail = () => {
       try {
         const res = await fetch(url);
         const json = await res.json();
+        console.log(json);
         setMovie(json);
       } catch (error) {}
     };

@@ -11,9 +11,9 @@ import MovieDetail from './pages/MovieDetail';
 
 function App() {
   return (
-    <div className='min-h-screen  '>
+    <div className='min-h-screen flex flex-col grow'>
       <Navbar />
-      <main className=' mx-auto h-full  '>
+      <main className=' flex flex-col grow '>
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route exact path='/login' element={<Login />} />

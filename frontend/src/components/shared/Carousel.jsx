@@ -33,7 +33,7 @@ const Carousel = ({ title, url }) => {
               key={movie.id}
               id={movie.id}
               title={movie.title}
-              poster={`${posterPath}${movie.poster_path}`}
+              poster={`${posterPath}${movie.poster_path} `}
             />
           </div>
         ))}

@@ -46,8 +46,8 @@ const Home = () => {
         }}
       >
         <h1 className='mb-5 text-4xl md:text-7xl font-extrabold text-white text-left opacity-100'>
-          <div className=''>Browse less,</div>
-          <div className=''>watch more.</div>
+          <div className=''>Browse less.</div>
+          <div className=''>Watch more.</div>
         </h1>
       </div>
 
